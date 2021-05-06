@@ -4,6 +4,6 @@ const useController = new UserController();
 
 const routerUser = express.Router()
 
-routerUser.get('/',(req, res) => useController.logUser(req, res))
+routerUser.post('/',(req, res) => useController.logUser(req, res))
 
 export = routerUser
