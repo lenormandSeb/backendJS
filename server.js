@@ -1,8 +1,6 @@
-const http = require("http");
-const app = require('./app');
+const app = require('./app').set('port', 1337);
 
-app.set('port', 1337)
-
-const serv = http.createServer(app);
-
-serv.listen(1337);
+require("http").createServer(app)
+    .listen(app.get('port'), () => {
+        console.log(`Listen on port ${app.get('port')}`)
+    })

@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-require('./routes/routeControllers.js')(app)
+const router = require('./routes/index')
 
 var corsOption = {
     origin: 'http://localhost:8080'
@@ -9,10 +9,6 @@ var corsOption = {
 
 app.use(cors(corsOption))
 
-app.get('/subcategorie', (req, res) => {
-    const id = req.query.id
-    const cm = new categorieController();
-    cm.getById(res, id);
-})
+app.use('/v1', router)
 
 module.exports = app
