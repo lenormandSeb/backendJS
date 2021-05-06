@@ -1,4 +1,4 @@
-const app = require('./app').set('port', 1337);
+const app = require('./app.ts').set('port', 1337)
 
 require("http").createServer(app)
     .listen(app.get('port'), () => {

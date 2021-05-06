@@ -12,4 +12,4 @@ connexion.connect((err) => {
     console.log('`connecté`');
 })
 
-module.exports = connexion
+export = connexion
