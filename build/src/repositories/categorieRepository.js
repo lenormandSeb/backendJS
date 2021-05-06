@@ -62,11 +62,10 @@ var categorieRepository = /** @class */ (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             var query, result;
             return __generator(this, function (_a) {
-                query = this.queryBuilder('id', 1);
-                console.log(query);
+                query = this.queryBuilder();
                 result = this.database.query(query, function (err, res) {
                     if (err)
-                        throw err;
+                        console.log(err);
                 });
                 return [2 /*return*/, result ? result : []];
             });

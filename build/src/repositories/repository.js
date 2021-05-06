@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Repository = void 0;
-var db = ('../db');
+var connexion = require("../../db");
 var Repository = /** @class */ (function () {
     function Repository(tableName) {
-        this.database = db;
+        this.database = connexion;
         this.tablebase = tableName;
     }
     /**
@@ -20,7 +20,9 @@ var Repository = /** @class */ (function () {
         if (joins) {
             sql += " " + joins.join('') + " ";
         }
-        sql += " WHERE " + columnName + " = " + where;
+        if (where) {
+            sql += " WHERE " + columnName + " = " + where;
+        }
         if (param) {
             sql += " " + param.join('');
         }
