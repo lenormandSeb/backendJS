@@ -7,6 +7,13 @@ USE slenormand;
 DROP IF EXIST categorie;
 DROP IF EXIST subcategorie;
 DROP IF EXIST product;
+DROP IF EXIST user;
+
+CREATE TABLE user(
+    id INT(2) UNSIGNED AUTO INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
 
 CREATE TABLE categorie(
     id INT(2) UNSIGNED AUTO INCREMENT PRIMARY KEY,
@@ -87,3 +94,11 @@ INSERT INTO product (name, subcategorie_parent, price, image) VALUES (
     ('body 3 ans', 1, 10, ''),
     ('body prématuré', 1, 10, ''),
 );
+
+INSERT INTO user (name, password) VALUES (
+    ('TYPE', 'jesuisuntest'),
+    ('IPT', ',fdsjkqblk'),
+    ('TEST', 'fndsjhfjkdsqh'),
+    ('Seb', 'jesuisuntest3'),
+    ('SCR', 'jesuisuntesthfnjdsbgfhqdsf'),
+)

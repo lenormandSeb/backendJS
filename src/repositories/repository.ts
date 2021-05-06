@@ -1,4 +1,4 @@
-import connexion = require('../db')
+import connexion = require('../../db')
 export class Repository {
     database;
     tablebase: string;
@@ -15,7 +15,7 @@ export class Repository {
      * @param {array} param 
      * @returns {string} sql
      */
-    queryBuilder<String>(columnName?: string, where?: (string|number), joins?: [], param?: []) {
+    queryBuilder<String>(columnName?: string, where?: (string|number), joins?: [], param?: string[]) {
         let sql = `SELECT * FROM ${this.tablebase} AS ` + this.tablebase.substring(0, 3);
 
         if (joins) {

@@ -1,6 +1,5 @@
 import { Controller as Controller } from './controller'
 import { categorieRepository } from '../repositories/categorieRepository'
-import { createNoSubstitutionTemplateLiteral } from 'typescript';
 class categorieController extends Controller {
     repository
     constructor() {

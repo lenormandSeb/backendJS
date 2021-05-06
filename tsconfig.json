@@ -4,5 +4,9 @@
       "allowJs": true,
       "target": "es5"
     },
-    "include": ["./controller/*","./repositorues/*", "./routes/*"]
+    "include": [
+      "./src/controller/*",
+      "./src/repositorues/*",
+      "./src/routes/*",
+      "./src/entities/*"]
   }
